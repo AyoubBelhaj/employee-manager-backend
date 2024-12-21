@@ -6,6 +6,7 @@ COPY . .
 
 RUN ./mvnw clean package -DskipTests
 
+
 # Use a smaller image to run the app
 FROM openjdk:17-jre-slim
 COPY --from=build /app/target/*.jar /app/app.jar
